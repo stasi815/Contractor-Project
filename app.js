@@ -37,11 +37,22 @@ app.get('/albums/new', (req, res) => {
 // CREATE
 app.post('/albums', (req, res) => {
   models.Album.create(req.body).then(album => {
-    res.redirect(`/`);
+    res.redirect(`/albums/${album.id}`);
   }).catch((err) => {
     console.log(err)
   });
-})
+});
+// SHOW
+app.get('/albums/:id', (req, res) => {
+  // Search for the album by its id that was passed in via req.params
+  models.Album.findByPk(req.params.id).then((album) => {
+    // If the id is for a valid album, show it
+    res.render('albums-show', { album: album })
+  }).catch((err) => {
+    // if they id was for an album not in our db, log an error
+    console.log(err.message);
+  })
+});
 // Choose a port to listen on
 const port = process.env.PORT || 3000;
 
