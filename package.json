@@ -1,0 +1,23 @@
+{
+  "name": "memory-lane",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stasi815/memory-lane.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stasi815/memory-lane/issues"
+  },
+  "homepage": "https://github.com/stasi815/memory-lane#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2"
+  }
+}
