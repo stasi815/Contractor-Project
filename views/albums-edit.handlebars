@@ -10,10 +10,13 @@
                     <form action="/albums/{{album.id}}?_method=PUT" method="post">
                         {{> albums-form }}
                         <div class="text-right">
-                            <a href="/albums/{{album.id}}" class='text-muted mr-2'>Cancel</a>
                             <button type="submit" class="btn btn-primary" name="button">Update</button>
                         </div>
                     </form>
+                  </form>
+                  <form action="/albums/{{album.id}}?_method=DELETE" method="POST">
+                  <button type="submit" class='btn btn-danger'>Delete</button>
+                  </form>
                 </div>
             </div>
         </div>

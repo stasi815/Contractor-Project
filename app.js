@@ -76,6 +76,15 @@ app.put('/albums/:id', (req, res) => {
     console.log(err);
   });
 });
+// DELETE
+app.delete('/albums/:id', (req, res) => {
+  models.Album.findByPk(req.params.id).then(album => {
+    album.destroy();
+    res.redirect(`/`);
+  }).catch((err) => {
+    console.log(err);
+  });
+})
 // Choose a port to listen on
 const port = process.env.PORT || 3000;
 
