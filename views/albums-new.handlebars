@@ -1,24 +1,6 @@
-<form method="POST" action="/albums">
-  <fieldset>
-    <legend>New Album</legend>
-    <!-- TITLE -->
-    <p>
-      <label for="title">Title</label><br>
-      <input type="text" name="title" />
-    </p>
-    <p>
-      <label for="desc">Description</label><br>
-      <input type="text" name="desc" />
-    </p>
-    <p>
-    <label for="imgUrl">Image Url</label><br>
-    <input type="text" placeholder="" name="imgUrl" />
-    </p>
-  </fieldset>
-
-  <!-- BUTTON -->
-  <p>
-    <button type="submit">Save Album</button>
-  </p>
-
+<form action="/albums" method="post">
+  {{> albums-form }}
+  <div class="text-right">
+    <button type="submit" class="btn btn-primary" name="button">Save</button>
+  </div>
 </form>
