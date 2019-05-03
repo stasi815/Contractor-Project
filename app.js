@@ -9,14 +9,17 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 // Use handlebars to render
 app.set('view engine', 'handlebars');
 
-// Render the "home" layout for the main page and send the following msg
+// OUR MOCK ARRAY OF PROJECTS
+var albums = [
+  { title: "I am your first album", desc: "A great event that is super fun to look at and good", imgUrl: "https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn" },
+  { title: "I am your second album", desc: "A great event that is super fun to look at and good", imgUrl: "https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn" },
+  { title: "I am your third album", desc: "A great event that is super fun to look at and good", imgUrl: "https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn" }
+]
+
+// INDEX
 app.get('/', (req, res) => {
-  res.render('home', { msg: 'Handlebars are Cool!' });
-})
-// Tell our app to send the "hello world" message to our home page
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.render('albums-index', { albums: albums });
+});
 
 // Choose a port to listen on
 const port = process.env.PORT || 3000;
